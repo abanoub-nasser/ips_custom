@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <record id="assigned_categories_to_user_1" model="ir.rule">
+            <field name="name">User Access to determind categories</field>
+            <field name="model_id" ref="product.model_product_template"/>
+            <field name="domain_force">[('categ_id.id','in',user.users_categories.ids)]</field>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+</odoo>
